@@ -1,20 +1,21 @@
 import React from 'react'
 import {Formik, Form, Field} from 'formik';
+import {format} from 'date-fns';
 
-export default function SignUp() {
+export default function SignUp(props) {
 
 
 const initialValues = {
     firstName: '',
     lastName: '',
-    birthday: new Date,
+    birthday: format(new Date(), 'yyyy-MM-dd'),
     email : '',
-    password: ''
+    passwordHash: ''
 
 }
 
 const onSubmit = (values, actions) =>{
-    console.log(values);
+    props.sendData(values);
 }
 
   return (
@@ -24,13 +25,14 @@ const onSubmit = (values, actions) =>{
          initialValues={initialValues} 
         onSubmit={onSubmit}>
             {(props)=>(
-                <From>
+                <Form>
                     <Field name="firstName" placeholder='Type your name' />
                     <Field name="lastName" placeholder='Type your last name' />
                     <Field type='date' name="birthday"/>
                     <Field name="email" placeholder='Type your email' />
-                    <Field name="password" placeholder='Type your password' />
-                </From>
+                    <Field name="passwordHash" placeholder='Type your password' />
+                    <button type='submit'>Send!</button>
+                </Form>
             )}
         </Formik>
     </div>
