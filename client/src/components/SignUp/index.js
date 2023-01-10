@@ -10,7 +10,7 @@ const initialValues = {
     lastName: '',
     birthday: format(new Date(), 'yyyy-MM-dd'),
     email : '',
-    passwordHash: ''
+    password: ''
 
 }
 
@@ -30,7 +30,7 @@ const onSubmit = (values, actions) =>{
                     <Field name="lastName" placeholder='Type your last name' />
                     <Field type='date' name="birthday"/>
                     <Field name="email" placeholder='Type your email' />
-                    <Field name="passwordHash" placeholder='Type your password' />
+                    <Field name="password" placeholder='Type your password' />
                     <button type='submit'>Send!</button>
                 </Form>
             )}
