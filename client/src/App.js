@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './pages/Home';
 import ToDoPage from './pages/ToDoPage';
+import './App.css';
 
 
 

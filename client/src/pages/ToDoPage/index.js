@@ -1,9 +1,21 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import ToDoList from '../../components/ToDoList'
 
 export default function () {
+
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+     
+
+  }, [])
+  
+
+
   return (
     <div>
-      TASK
+      <h1>To Dp List</h1>
+      <ToDoList todos={todos}/>
     </div>
   )
 }

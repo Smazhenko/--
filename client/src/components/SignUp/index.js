@@ -1,6 +1,7 @@
 import React from 'react'
 import {Formik, Form, Field} from 'formik';
 import {format} from 'date-fns';
+import {registerUser} from '../../api/userApi'
 
 export default function SignUp(props) {
 
@@ -15,11 +16,14 @@ const initialValues = {
 }
 
 const onSubmit = (values, actions) =>{
-    props.sendData(values);
+    props.sendData({
+        callback: registerUser,
+        values
+    });
 }
 
   return (
-    <div>
+    <>
         <h2>SignUp</h2>
         <Formik
          initialValues={initialValues} 
@@ -35,6 +39,6 @@ const onSubmit = (values, actions) =>{
                 </Form>
             )}
         </Formik>
-    </div>
+    </>
   )
 }

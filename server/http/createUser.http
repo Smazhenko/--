@@ -1,10 +1,10 @@
-POST http://localhost:5000/api/user/registration HTTP/1.1
+POST http://localhost:5000/api//user/sign-up HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName" : "Harry",
-    "lastName" : "Potter",
+    "firstName" : "fima",
+    "lastName" : "noid",
     "birthday" : "1999-02-02",
-    "email" : "potter@hog.com",
-    "passwordHash" : "griffindor"
+    "email" : "1q2w3e@mail.com",
+    "password" : "griffin"
 }

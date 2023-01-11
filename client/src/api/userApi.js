@@ -29,7 +29,7 @@ export const loginUser = async (data) => {
     });
     if (responce.status === 400) {
         const error = await responce.json();
-        return Promise.reject(error);
+        return Promise.reject(error.err);
        }
    
        return responce.json();
