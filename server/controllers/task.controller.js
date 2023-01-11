@@ -6,6 +6,7 @@ module.exports.getAllUserTasks = async(req, res, next) =>{
         const userTasks = await Task.find({
             authorId : userId
         })
+        res.status(200).send(userTasks);
 
     } catch(err) {
         next(err)
