@@ -1,9 +1,10 @@
 import React from 'react'
+import ToDoItem from '../ToDoItem'
 
 export default function ToDoList(props) {
   return (
     <ul>
-        {props.totod.map(td=> <li>{td}</li>)}
+        {props.todos.map(td=> <ToDoItem item={td} key={td._id} />)}
     </ul>
   )
 }

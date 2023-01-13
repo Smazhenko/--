@@ -5,6 +5,7 @@ module.exports.registrationUser = async (req, res ,next) =>{
     try{
         const {body, passwordHash} = req;
         const createdUser = await User.create({...body, passwordHash});
+        delete createdUser.passwordHash;
         return res.status(201).send({data : createdUser});
     } catch(err) {
         next(err)

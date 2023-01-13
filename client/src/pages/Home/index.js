@@ -7,28 +7,9 @@ import styles from './Home.module.css'
 export default function Home(props) {
     const [state,  setState] = useState(true);
 
-    // const [data,setData] = useState();
-
     const navigate = useNavigate();
 
     const [error, setError] = useState(null);
-    // useEffect(() => {
-    //   if(data) {
-    //     registerUser(data)
-    //     .then(result =>{
-    //      navigate('/tasks');
-    //      props.sendUser(result)
-    //     })
-    //     .catch(err=> {
-    //       setError(err)
-    //     })
-      
-    //     return () => {
-          
-    //     }
-    //   }
-    // }, [data])
-    
 
     const btnHandler = () =>{
         setState(state => !state);
