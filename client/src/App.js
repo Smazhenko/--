@@ -19,7 +19,7 @@ function App() {
    <BrowserRouter>
    <Routes>
     <Route path='/' element ={<Home sendUser={setUser}/>}/>
-    <Route path='/tasks' element ={<ToDoPage user={user}/>}/>
+    <Route path='/tasks' element ={<ToDoPage sendUser={setUser} user={user}/>}/>
    </Routes>
    </BrowserRouter>
   )

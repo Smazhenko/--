@@ -5,6 +5,7 @@ const userRouter = Router();
 
 userRouter.post('/sign-up', hashPass,  UserController.registrationUser);
 userRouter.post('/sign-in',hashPass, UserController.loginUser);
+userRouter.get('/:token', UserController.checkToken);
 
 
 module.exports = userRouter;

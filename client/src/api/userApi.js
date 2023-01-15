@@ -35,3 +35,14 @@ export const loginUser = async (data) => {
        return responce.json();
    
 }
+
+export const checkToken = async (token) => {
+    const responce = await fetch(`${CONSTANTS.API_BASE}/user/${token}`);
+    if (responce.status === 403) {
+        const error = await responce.json();
+        return Promise.reject(error.err);
+       }
+   
+       return responce.json();
+   
+}

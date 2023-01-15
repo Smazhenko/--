@@ -18,6 +18,7 @@ export default function Home(props) {
     const getData = ({callback, values}) =>{
       callback(values)
       .then(result =>{
+        localStorage.setItem('token', result.token)
         navigate('/tasks');
         props.sendUser(result.data)
        })

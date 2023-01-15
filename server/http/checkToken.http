@@ -1,0 +1,1 @@
+GET http://localhost:5000/api//user/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2I5Njk4ZmZhNTJmZjkzZjE5MDZhYTAiLCJlbWFpbCI6InBvdHRlckBob2cuY29tIiwiaWF0IjoxNjczNzgyMzIwLCJleHAiOjE2NzM3ODU5MjB9.s3goTbhuTy4a0LmDBzl7nghlncGufXRPOghgkG38LSE HTTP/1.1
