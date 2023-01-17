@@ -30,16 +30,14 @@ module.exports.loginUser = async (req, res ,next) =>{
     }
 };
 
-
-module.exports.checkToken = async( req, res, next) =>{
+module.exports.checkToken = async (req, res , next) =>{
     try{
-        const {params : {token}} = req;
-        const verifyedToken = await verifyToken(token);
+        const {verifyedToken : {email}} = req;
         const foundUser = await User.findOne({
             email: verifyedToken.email
         });
-      return res.status(200).send({data: foundUser})
+        res.status(200).send({data: foundUser})
     } catch(err) {
-        next(err);
+        next(err)
     }
 }
