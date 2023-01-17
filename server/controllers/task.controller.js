@@ -2,7 +2,7 @@ const {Task} = require('../models/index')
 
 module.exports.getAllUserTasks = async(req, res, next) =>{
     try{
-        const {params: {userId}} = req;
+        const {verifyedToken: {userId}} = req;
         const userTasks = await Task.find({
             authorId : userId
         })
@@ -16,8 +16,8 @@ module.exports.getAllUserTasks = async(req, res, next) =>{
 
 module.exports.createUserTask = async(req, res, next)=>{
     try{
-        const {body} = req;
-        const task = await Task.create(body);
+        const {body, verifyedToken: {userId}} = req;
+        const task = await Task.create({...body, userId });
         res.status(201).send(task);
     } catch(err) {
         next(err);
